@@ -13,7 +13,7 @@ const Page = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "api-key": "b4af8668c1465b983a4d11e570f8111f"
+          "api-key": `${process.env.BIBLE_API_KEY}`
         },
       });
       const data = await response.json();
