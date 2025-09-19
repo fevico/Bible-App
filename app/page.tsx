@@ -2,21 +2,24 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import Languages from "@/components/card/languages";
+import { fetchBibleData } from "@/lib/api";
 
 const Page = () => {
 
   const [english, setEnglish] = useState();
   useEffect(() => {
-    // Client-side logic can go here
+    // Client-side logic can go here   
     const data = async () => {
-      const response = await fetch("https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-01", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "api-key": `${process.env.BIBLE_API_KEY}`
-        },
-      });
-      const data = await response.json();
+      const response = await fetchBibleData()
+          console.log(response, "response from bible")
+      // const response = await fetch("https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-01", {
+      //   method: "GET",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "api-key": `${process.env.BIBLE_API_KEY}`
+      //   },   
+      // });
+      const data = await response?.data;
       setEnglish(data);
       console.log(data);
     };

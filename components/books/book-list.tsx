@@ -24,7 +24,7 @@ const BookList = ({ bibleId }: { bibleId: string }) => {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "api-key": `${process.env.BIBLE_API_KEY}`,
+              "api-key": `${process.env.NEXT_PUBLIC_BIBLE_API_KEY}`,
             },
           }
         );
@@ -58,7 +58,7 @@ const BookList = ({ bibleId }: { bibleId: string }) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "api-key": `${process.env.BIBLE_API_KEY}`,
+            "api-key": `${process.env.NEXT_PUBLIC_BIBLE_API_KEY}`,
           },
         }
       );
@@ -84,7 +84,7 @@ const BookList = ({ bibleId }: { bibleId: string }) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "api-key": `${process.env.BIBLE_API_KEY}`,
+            "api-key": `${process.env.NEXT_PUBLIC_BIBLE_API_KEY}`,
           },
         }
       );
@@ -141,7 +141,7 @@ const BookList = ({ bibleId }: { bibleId: string }) => {
           )}
         </Card>
       ))}
-    </div>
+    </div>    
   );
 };
 

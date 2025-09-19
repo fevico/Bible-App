@@ -4,6 +4,9 @@ import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { useRouter } from "next/navigation"; // For navigation to chapters page
 
 const LanguageCard = ({ data }: { data: any }) => {
+
+        console.log(data, "english bible")
+    
   const router = useRouter(); // Optional: For navigating to chapters
 
   const response = data?.data
